@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赴日人才简历模板</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .tabs {
+            display: flex;
+            background: #34495e;
+        }
+        .tab {
+            padding: 12px 20px;
+            color: white;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+        .tab:hover {
+            background: #3d566e;
+        }
+        .tab.active {
+            background: #1abc9c;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-title {
+            border-left: 4px solid #1abc9c;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f8f9fa;
+            width: 20%;
+            font-weight: normal;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input {
+            margin-right: 5px;
+        }
+        .photo-container {
+            text-align: center;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            background: #f9f9f9;
+        }
+        .photo-placeholder {
+            width: 120px;
+            height: 160px;
+            background: #eee;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 80px;
+        }
+        input[type="text"], input[type="tel"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            flex: 1;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .note {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .btn-save {
+            background: #1abc9c;
+            color: white;
+        }
+        .btn-save:hover {
+            background: #16a085;
+        }
+        .btn-print {
+            background: #3498db;
+            color: white;
+        }
+        .btn-print:hover {
+            background: #2980b9;
+        }
+        .btn-reset {
+            background: #e74c3c;
+            color: white;
+        }
+        .btn-reset:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <h1>赴日工作简历</h1>
+            <p>日本人才招聘专用 - 请如实填写所有信息</p>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="personal">个人信息</div>
+            <div class="tab" data-tab="language">语言能力</div>
+            <div class="tab" data-tab="education">教育经历</div>
+            <div class="tab" data-tab="work">工作经历</div>
+            <div class="tab" data-tab="skills">技能证书</div>
+            <div class="tab" data-tab="preferences">求职意向</div>
+        </div>
+        
+        <!-- 个人信息 -->
+        <div class="tab-content active" id="personal">
+            <div class="section">
+                <h2 class="section-title">基本信息</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>姓名</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>拼音/罗马字</label>
+                        <input type="text">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>性别</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="gender" id="male"> <label for="male">男</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="gender" id="female"> <label for="female">女</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>出生日期</label>
+                        <input type="text" placeholder="年/月/日">
+                    </div>
+                    <div class="form-group">
+                        <label>年龄</label>
+                        <input type="text">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>民族</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>籍贯</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>婚姻状况</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="marriage" id="single"> <label for="single">未婚</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="marriage" id="married"> <label for="married">已婚</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>联系电话</label>
+                        <input type="tel">
+                    </div>
+                    <div class="form-group">
+                        <label>微信/Line</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>电子邮箱</label>
+                        <input type="email">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">联系地址</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>现住址</label>
+                        <input type="text" placeholder="邮编">
+                        <input type="text" placeholder="详细地址" style="margin-top: 5px;">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>户籍地址</label>
+                        <input type="text" placeholder="邮编">
+                        <input type="text" placeholder="详细地址" style="margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">照片</h2>
+                <div class="photo-container">
+                    <div class="photo-placeholder">
+                        证件照<br>(3cm×4cm)
+                    </div>
+                    <p class="note">请粘贴近期免冠证件照</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">家庭情况</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>配偶</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="spouse" id="spouse-yes"> <label for="spouse-yes">有</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="spouse" id="spouse-no"> <label for="spouse-no">无</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>需抚养子女人数（不含配偶）</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>是否有抚养配偶的义务</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="support" id="support-yes"> <label for="support-yes">有</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="support" id="support-no"> <label for="support-no">无</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">紧急联系人</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>姓名</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>关系</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>联系电话</label>
+                        <input type="tel">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 语言能力 -->
+        <div class="tab-content" id="language">
+            <div class="section">
+                <h2 class="section-title">日语能力</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>JLPT等级</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="jlpt" id="n1"> <label for="n1">N1</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="jlpt" id="n2"> <label for="n2">N2</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="jlpt" id="n3"> <label for="n3">N3</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="jlpt" id="n4"> <label for="n4">N4</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="jlpt" id="n5"> <label for="n5">N5</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="jlpt" id="none"> <label for="none">无</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>日语学习时间</label>
+                        <input type="text" placeholder="年/月">
+                    </div>
+                    <div class="form-group">
+                        <label>日语会话能力</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="conversation" id="fluent"> <label for="fluent">流利</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="conversation" id="business"> <label for="business">商务水平</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="conversation" id="daily"> <label for="daily">日常会话</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="conversation" id="basic"> <label for="basic">基础</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">其他语言能力</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>英语</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cet4"> <label for="cet4">CET-4</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cet6"> <label for="cet6">CET-6</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="toefl"> <label for="toefl">TOEFL</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ielts"> <label for="ielts">IELTS</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>其他语言</label>
+                        <input type="text" placeholder="请填写语言及水平">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 教育经历 -->
+        <div class="tab-content" id="education">
+            <div class="section">
+                <h2 class="section-title">教育经历（从最高学历开始填写）</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>期间</th>
+                            <th>学校名称</th>
+                            <th>专业</th>
+                            <th>学历</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 工作经历 -->
+        <div class="tab-content" id="work">
+            <div class="section">
+                <h2 class="section-title">工作经历（请详细填写所有工作经历，无论长短）</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>期间</th>
+                            <th>公司名称</th>
+                            <th>职位</th>
+                            <th>工作内容</th>
+                            <th>离职原因</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><textarea></textarea></td>
+                            <td><textarea></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><textarea></textarea></td>
+                            <td><textarea></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><textarea></textarea></td>
+                            <td><textarea></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月 - 年/月"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><textarea></textarea></td>
+                            <td><textarea></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 技能证书 -->
+        <div class="tab-content" id="skills">
+            <div class="section">
+                <h2 class="section-title">资格・证书</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>取得年月</th>
+                            <th>资格/证书名称</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="年/月"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="年/月"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">特殊技能</h2>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cooking"> <label for="cooking">烹饪/料理</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="construction"> <label for="construction">建筑/装修</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="office"> <label for="office">办公软件</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="translation"> <label for="translation">日语翻译</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="machinery"> <label for="machinery">机械操作</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="car-repair"> <label for="car-repair">汽车维修</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="nursing"> <label for="nursing">护理/介护</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="welding"> <label for="welding">电焊</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="forklift"> <label for="forklift">叉车</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="crane"> <label for="crane">起重机</label>
+                    </div>
+                </div>
+                
+                <div class="form-row" style="margin-top: 10px;">
+                    <div class="form-group">
+                        <label>其他技能</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">驾照信息</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>是否有驾照</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="license" id="license-yes"> <label for="license-yes">有</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="license" id="license-no"> <label for="license-no">无</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>驾照类型</label>
+                        <input type="text" placeholder="普通/大型/其他">
+                    </div>
+                    <div class="form-group">
+                        <label>驾龄</label>
+                        <input type="text" placeholder="年">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 求职意向 -->
+        <div class="tab-content" id="preferences">
+            <div class="section">
+                <h2 class="section-title">求职意向</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>希望行业（第一希望）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="hotel1"> <label for="hotel1">酒店</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="construction1"> <label for="construction1">建筑</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="office1"> <label for="office1">事务</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="catering1"> <label for="catering1">餐饮</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="logistics1"> <label for="logistics1">物流</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="manufacturing1"> <label for="manufacturing1">制造业</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="it1"> <label for="it1">IT</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="sales1"> <label for="sales1">销售</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry1" id="nursing1"> <label for="nursing1">护理</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>希望行业（第二希望）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="hotel2"> <label for="hotel2">酒店</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="construction2"> <label for="construction2">建筑</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="office2"> <label for="office2">事务</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="catering2"> <label for="catering2">餐饮</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="logistics2"> <label for="logistics2">物流</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="manufacturing2"> <label for="manufacturing2">制造业</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="it2"> <label for="it2">IT</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="sales2"> <label for="sales2">销售</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="industry2" id="nursing2"> <label for="nursing2">护理</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>工作形式</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="full-time"> <label for="full-time">全职</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="part-time"> <label for="part-time">兼职</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="internship"> <label for="internship">实习</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="dispatch"> <label for="dispatch">派遣</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>可接受加班</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="overtime" id="overtime-yes"> <label for="overtime-yes">是</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="overtime" id="overtime-no"> <label for="overtime-no">否</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>可接受夜班</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="night" id="night-yes"> <label for="night-yes">是</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="night" id="night-no"> <label for="night-no">否</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">期望条件</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>期望月薪</label>
+                        <input type="text" placeholder="万円">
+                    </div>
+                    <div class="form-group">
+                        <label>期望时薪</label>
+                        <input type="text" placeholder="円">
+                    </div>
+                    <div class="form-group">
+                        <label>可接受通勤时间</label>
+                        <input type="text" placeholder="约 小时 分">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>可接受的工作地点</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="kanto"> <label for="kanto">关东</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="kansai"> <label for="kansai">关西</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="kyushu"> <label for="kyushu">九州</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="chubu"> <label for="chubu">中部</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hokkaido"> <label for="hokkaido">北海道</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="anywhere"> <label for="anywhere">不限</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>期望住宿</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="accommodation" id="company"> <label for="company">公司提供</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="accommodation" id="self"> <label for="self">自理</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="accommodation" id="both"> <label for="both">均可</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">自我推介</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>性格、特长、工作态度、职业规划等</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">其他期望</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>其他特殊要求</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn-save">保存简历</button>
+            <button class="btn-print">打印简历</button>
+            <button class="btn-reset">重置表单</button>
+        </div>
+    </div>
+
+    <script>
+        // 选项卡切换功能
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 移除所有active类
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+                
+                // 添加active类到当前选项卡
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // 保存按钮功能
+        document.querySelector('.btn-save').addEventListener('click', () => {
+            alert('简历已保存！在实际应用中，这里会将数据保存到数据库或本地存储。');
+        });
+        
+        // 打印按钮功能
+        document.querySelector('.btn-print').addEventListener('click', () => {
+            window.print();
+        });
+        
+        // 重置按钮功能
+        document.querySelector('.btn-reset').addEventListener('click', () => {
+            if(confirm('确定要重置所有表单内容吗？')) {
+                document.querySelectorAll('input, textarea').forEach(element => {
+                    if(element.type === 'text' || element.type === 'tel' || element.type === 'email') {
+                        element.value = '';
+                    } else if(element.type === 'checkbox' || element.type === 'radio') {
+                        element.checked = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
